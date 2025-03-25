@@ -11,4 +11,4 @@
 - Constraints are hard-coded, these should be decleared in a config file (like in the backend repo)
 
 ## Most important shortcoming
-An API call is made on even the slightest movement of the slider resulting in hundreds of API calls when moving the slider
+An API call is made on even the slightest movement of the slider resulting in hundreds of API calls when moving the slider and not using the constraints set in the requirements

@@ -101,8 +101,10 @@ class _LoanFormState extends State<LoanForm> {
                     onChanged: (double newValue) {
                       setState(() {
                         _loanAmount = ((newValue.floor() / 100).round() * 100);
-                        _submitForm();
                       });
+                    },
+                    onChangeEnd: (double newValue) {
+                        _submitForm();
                     },
                   ),
                   const SizedBox(height: 4),
@@ -133,15 +135,17 @@ class _LoanFormState extends State<LoanForm> {
                   Slider.adaptive(
                     value: _loanPeriod.toDouble(),
                     min: 12,
-                    max: 60,
+                    max: 48,
                     divisions: 40,
                     label: '$_loanPeriod months',
                     activeColor: AppColors.secondaryColor,
                     onChanged: (double newValue) {
                       setState(() {
                         _loanPeriod = ((newValue.floor() / 6).round() * 6);
-                        _submitForm();
                       });
+                    },
+                    onChangeEnd: (double newValue) {
+                        _submitForm();
                     },
                   ),
                   const SizedBox(height: 4),
@@ -152,7 +156,7 @@ class _LoanFormState extends State<LoanForm> {
                           padding: EdgeInsets.only(left: 12),
                           child: Align(
                               alignment: Alignment.centerLeft,
-                              child: Text('6 months')),
+                              child: Text('12 months')),
                         ),
                       ),
                       Expanded(
@@ -160,7 +164,7 @@ class _LoanFormState extends State<LoanForm> {
                           padding: EdgeInsets.only(right: 12),
                           child: Align(
                             alignment: Alignment.centerRight,
-                            child: Text('60 months'),
+                            child: Text('48 months'),
                           ),
                         ),
                       )

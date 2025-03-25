@@ -60,7 +60,7 @@ class InBankForm extends StatelessWidget {
                   ),
                 ),
                 Visibility(
-                    visible: showText, child: const SizedBox(height: 60)),
+                    visible: showText, child: const SizedBox(height: null)),
                 const LoanForm(),
               ],
             ),
